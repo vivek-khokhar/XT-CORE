@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 100% Georgia, "Times New Roman", Times, Serif;
+}
+body {
+  background-color: hsla(41, 40%, 55%, 0.5);
+}
+.wrapper {
+  width: 1400px;
+  background-color: blueviolet;
+  margin: 0px auto;
+  border: 5px solid black;
+  padding: 2px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-left: 10px;
+}
+p {
+  margin-left: 10px;
+}
