@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tables</title>
+    <style>
+      html,
+      body {
+        width: 980px;
+        margin: 10px auto;
+        background: lightblue;
+      }
+      table, th, td {
+        width: 980px;
+        font-family: sans-serif;
+        border: 2px solid rgb(100, 100, 200);
+        background: lightgoldenrodyellow;
+        border-collapse: collapse;
+      }
+      th, td {
+          padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Training Details
+      </caption>
+      <thead>
+      <tr>
+        <th>Serial Number</th>
+        <th>Technology</th>
+        <th>Client</th>
+        <th>Location</th>
+        <th colspan="2">Contact details</th>
+        <th>Invoice Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>HTML</td>
+        <td>Sapient</td>
+        <td>NCR</td>
+        <td>email@mailprovider.com</td>
+        <td>1234567890</td>
+        <td>1500</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>CSS</td>
+        <td>Sapient</td>
+        <td>NCR</td>
+        <td>email@mailprovider.com</td>
+        <td>1234567890</td>
+        <td>1500</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Angular</td>
+        <td>Accenture</td>
+        <td>NCR</td>
+        <td>email@mailprovider.com</td>
+        <td>1234567890</td>
+        <td>1500</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>React</td>
+        <td>Infosys</td>
+        <td>Chandigarh</td>
+        <td>email@mailprovider.com</td>
+        <td>1234567890</td>
+        <td>1500</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+          <td colspan ="6" style="text-align:center">Total Invoice </td>
+          <td>6000</td>
+
+      </tr>
+    </tfoot>
+    </table>
+  </body>
+</html>

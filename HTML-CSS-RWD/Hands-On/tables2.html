@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tables</title>
+    <style>
+      html,
+      body {
+        width: 980px;
+        margin: 10px auto;
+        background: lightblue;
+      }
+      table, th, td {
+        width: 980px;
+        font-family: sans-serif;
+        border: 2px solid rgb(100, 100, 200);
+        background: lightgoldenrodyellow;
+        border-collapse: collapse;
+      }
+      th, td {
+          padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>ITEMS sold summary</h1>
+    <table>
+      <caption>
+        Items sold august 2016
+      </caption>
+      <thead>
+        <tr>
+          <td>&nbsp</td>
+          <td>&nbsp</td>
+          <th colspan="3">Clothes</th>
+          <th colspan="2">Accessories</th>
+        </tr>
+        <tr>
+                <td>&nbsp</td>
+                <td>&nbsp</td>
+                <th>Trousers</th>
+                <th>Skirts</th>
+                <th>Dresses</th>
+                <th>Braclates</th>
+                <th>Rings</th>
+              </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th rowspan="3">Belgium</th>
+              <th>Antwerp</th>
+              <td>56</td>
+              <td>22</td>
+              <td>23</td>
+              <td>72</td>
+              <td>34</td>
+          </tr>
+          <tr>
+                <th>Brussels</th>
+                <td>56</td>
+                <td>22</td>
+                <td>23</td>
+                <td>72</td>
+                <td>34</td>
+          </tr>
+          <tr>
+                <th>Viena</th>
+                <td>56</td>
+                <td>22</td>
+                <td>23</td>
+                <td>72</td>
+                <td>34</td>
+          </tr>
+          <tr>
+              <th rowspan="2">The Netherlands</th>
+              <th>Amsterdem</th>
+                <td>56</td>
+                <td>22</td>
+                <td>23</td>
+                <td>72</td>
+                <td>34</td>
+          </tr>
+          <tr>
+                <th>Heisgenberg</th>
+                <td>56</td>
+                <td>22</td>
+                <td>23</td>
+                <td>72</td>
+                <td>34</td>
+          </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

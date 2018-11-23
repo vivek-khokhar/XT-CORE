@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DAY 7 1st example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        margin: 0 auto;
+        width: 900px;
+      }
+      /* .wrapper {
+            width: 80%;
+            display:grid;
+            grid-template-columns: repeat(5,1fr,2);
+            background: linear-gradient(lightblue, white);
+        } */
+      .wrapper {
+        display: grid;
+        /* grid-template-rows: 1fr; */
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+      }
+      div {
+        background-color: lightgreen;
+        border: 2px solid red;
+      }
+      .item1 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class = "item1">One</div>
+      <div>Two</div>
+      <div>Three</div>
+      <div>Four</div>
+      <div>Five</div>
+      <div>
+        <div>One1</div>
+        <div>Two1</div>
+        <div>Three1</div>
+      </div>
+    </div>
+  </body>
+</html>

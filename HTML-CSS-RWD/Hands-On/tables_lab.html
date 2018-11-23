@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tables Lab</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 980px;
+        margin: 10px auto;
+        background: lightblue;
+      }
+      table,
+      th,
+      td {
+        width: 980px;
+        font-family: sans-serif;
+        border: 2px solid rgb(100, 100, 200);
+        background: lightgoldenrodyellow;
+        border-collapse: collapse;
+      }
+      table {
+        border: 5px solid black;
+      }
+      th,
+      td {
+        padding: 5px;
+        text-align: center;
+      }
+      th {
+        background: yellowgreen;
+      }
+      th.header {
+        background: rgb(92, 92, 12);
+      }
+      span {
+        font-weight: 600;
+      }
+      .listStyle {
+        padding: 15px;
+        text-align: left;
+      }
+      .redText {
+        color: red;
+      }
+      .italicStyle {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        <h1>2012 Temperature Highlights</h1>
+      </caption>
+      <thead>
+        <tr>
+          <th class="header" colspan="9">
+            <h2>2012 Temperature Highlights</h2>
+          </th>
+        </tr>
+        <tr>
+          <th>&nbsp</th>
+          <th>Annual Average Temperature (normal)</th>
+          <th>Days 100F or Above (normal)</th>
+          <th>Days 90F or Above (normal)</th>
+          <th>Days 32F or Below (normal)</th>
+          <th>Mornings 10F or Below (normal)</th>
+          <th>Warmest Day</th>
+          <th>Coldest Morning</th>
+          <th>Other Highlights</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Wichita</th>
+          <td>
+            <span class="redText">61.4 </span><br />
+            <span> 1st Warmest </span> <br />
+            <span class="italicStyle">(57.0)</span>
+          </td>
+          <td>
+            <span class="redText"> 36 </span><br />
+            <span> 7th Most </span><br />
+            <span class="italicStyle">(12.2)</span>
+          </td>
+          <td>
+            <span class="redText"> 96 </span> <br />
+            <span> 3rd Most </span><br />
+            <span class="italicStyle">(61.7)</span>
+          </td>
+          <td>
+            <span class="redText"> 7 </span><br />
+            <span> Tied 5th least </span><br />
+            <span class="italicStyle">(18.3)</span>
+          </td>
+          <td>
+            <span class="redText"> 2 </span><br />
+            <span> Tied 4th least </span><br />
+            <span class="italicStyle">(9.6)</span>
+          </td>
+          <td>
+            <span class="redText"> 111 </span> <br />
+            <span class="italicStyle">july 29, 30</span>
+          </td>
+          <td>
+            <span class="redText"> 7 </span> <br />
+            <span class="italicStyle">Dec 29</span>
+          </td>
+          <td>
+            <ul>
+              <li>5th warmest winter</li>
+              <li>1st warmest spring</li>
+              <li>6th warmest Summer</li>
+              <li>All monthly Temperature above normal</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Salina</th>
+          <td>
+              <span class="redText">61.4 </span><br />
+              <span> 1st Warmest </span> <br />
+              <span class="italicStyle">(57.0)</span>
+            </td>
+            <td>
+              <span class="redText"> 36 </span><br />
+              <span> 7th Most </span><br />
+              <span class="italicStyle">(12.2)</span>
+            </td>
+            <td>
+              <span class="redText"> 96 </span> <br />
+              <span> 3rd Most </span><br />
+              <span class="italicStyle">(61.7)</span>
+            </td>
+            <td>
+              <span class="redText"> 7 </span><br />
+              <span> Tied 5th least </span><br />
+              <span class="italicStyle">(18.3)</span>
+            </td>
+            <td>
+              <span class="redText"> 2 </span><br />
+              <span> Tied 4th least </span><br />
+              <span class="italicStyle">(9.6)</span>
+            </td>
+            <td>
+              <span class="redText"> 111 </span> <br />
+              <span class="italicStyle">july 29, 30</span>
+            </td>
+            <td>
+              <span class="redText"> 7 </span> <br />
+              <span class="italicStyle">Dec 29</span>
+            </td>
+            <td>
+              <ul>
+                <li>5th warmest winter</li>
+                <li>1st warmest spring</li>
+                <li>6th warmest Summer</li>
+                <li>All monthly Temperature above normal</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+          <th>Chanute</th>
+          <td>
+              <span class="redText">61.4 </span><br />
+              <span> 1st Warmest </span> <br />
+              <span class="italicStyle">(57.0)</span>
+            </td>
+            <td>
+              <span class="redText"> 36 </span><br />
+              <span> 7th Most </span><br />
+              <span class="italicStyle">(12.2)</span>
+            </td>
+            <td>
+              <span class="redText"> 96 </span> <br />
+              <span> 3rd Most </span><br />
+              <span class="italicStyle">(61.7)</span>
+            </td>
+            <td>
+              <span class="redText"> 7 </span><br />
+              <span> Tied 5th least </span><br />
+              <span class="italicStyle">(18.3)</span>
+            </td>
+            <td>
+              <span class="redText"> 2 </span><br />
+              <span> Tied 4th least </span><br />
+              <span class="italicStyle">(9.6)</span>
+            </td>
+            <td>
+              <span class="redText"> 111 </span> <br />
+              <span class="italicStyle">july 29, 30</span>
+            </td>
+            <td>
+              <span class="redText"> 7 </span> <br />
+              <span class="italicStyle">Dec 29</span>
+            </td>
+            <td>
+              <ul>
+                <li>5th warmest winter</li>
+                <li>1st warmest spring</li>
+                <li>6th warmest Summer</li>
+                <li>All monthly Temperature above normal</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+      </tbody>
+    </table>
+  </body>
+</html>

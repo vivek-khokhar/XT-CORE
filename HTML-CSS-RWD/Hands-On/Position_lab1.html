@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Position: Static</title>
+    <style>
+      html,
+      body {
+        margin: 0 auto;
+        width: 1600px;
+      }
+      .wrapper {
+        width: 1200px;
+        background: lightblue;
+        overflow: auto;
+        margin: 100px;
+      }
+      p {
+        background: aqua;
+        border: 3px SOLID BLUE;
+        padding: 10px;
+        margin: 10px;
+      }
+      .positioned {
+        position: static;
+        background: yellow;
+      }
+      .widthtop {
+          width: 1000px;
+          position: relative;
+          overflow: visible;
+      }
+      .widthadjust {
+          width: 300px;
+          position: relative;
+          bottom: 30px;
+          left: 30px;
+          float: left;
+      }
+      .widthadjustright {
+          width: 300px;
+          position: relative;
+          bottom: 30px;
+          right: 30px;
+          float: left;
+          margin-left: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <p class="widthtop">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque aliquid
+        omnis earum doloremque quas incidunt dolore dolorem at voluptatem
+        adipisci excepturi iste praesentium quod vero eum aperiam, impedit
+        necessitatibus vitae. new line formControlName=".".
+      </p>
+
+      <p class="widthadjust">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+        maiores? Dolores fugit repellat magnam veritatis ea eveniet voluptatum,
+        ipsum ipsam molestiae eum similique hic debitis delectus recusandae
+        placeat illo est!
+      </p>
+      <p class="widthadjustright">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis in
+        quas, culpa esse vel totam eius assumenda laboriosam aperiam! Possimus
+        eos quam tempora odio, veritatis ipsam. Maiores deleniti autem quod.
+      </p>
+    </div>
+  </body>
+</html>

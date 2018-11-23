@@ -1,0 +1,50 @@
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 980px;
+        margin: 10px auto;
+        background: lightblue;
+      }
+      table,
+      th,
+      td {
+        width: 980px;
+        font-family: sans-serif;
+        border: 2px solid rgb(100, 100, 200);
+        background: lightgoldenrodyellow;
+        border-collapse: collapse;
+      }
+      table {
+        border: 5px solid black;
+      }
+      th,
+      td {
+        padding: 5px;
+        text-align: center;
+      }
+      th {
+        background: yellowgreen;
+      }
+      th.header {
+        background: rgb(92, 92, 12);
+      }
+      span {
+        font-weight: 600;
+      }
+      ul.listStyle {
+        font-style: italic;
+        text-align: left;
+        list-style-type: none;
+      }
+      .redText {
+        color: red;
+        font-weight: 100;
+      }
+      .italicStyle {
+        font-style: italic;
+        font-weight: 100;
+      }

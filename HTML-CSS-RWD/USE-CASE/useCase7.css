@@ -1,0 +1,132 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.wrapper {
+  margin: 0px auto;
+}
+header {
+  width: 100%;
+  overflow: auto;
+}
+section {
+  background: linear-gradient(#f68a73, #ffdf8f);
+  overflow: auto;
+}
+.section1 {
+  width: 50%;
+  float: left;
+  overflow: auto;
+  display: block;
+  position: relative;
+}
+.section2 {
+  width: 50%;
+  float: left;
+  padding: 20px 20px 20px 0px;
+}
+.section3 {
+  float: left;
+  width: 96%;
+  height: 6%;
+  padding: 2%;
+  color: #ffffff;
+}
+.section4 {
+  width: 1260px;
+  margin: 0px auto;
+  background: #ffffff;
+}
+.section5 {
+  width: 394px;
+  margin: 10px;
+  border: 1px solid black;
+  background: #ffffff;
+  float: left;
+}
+.headerImage {
+  width: 7%;
+  float: left;
+  padding: 10px;
+}
+.headerContent {
+  width: 8%;
+  float: left;
+  text-align: center;
+  font-size: 160%;
+  padding: 12px;
+}
+.section1Content {
+  padding: 4%;
+}
+.sectionImage1 {
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+.welcomewrapper {
+  padding: 6% 10% 45% 15%;
+  color: white;
+}
+.sectionbackground {
+  background: url(skyline.png) no-repeat left bottom;
+}
+.input1 {
+  width: 100%;
+  font-size: 2em;
+  margin: 1% 0;
+  border: 0;
+  height: 3em;
+}
+.input2 {
+  width: 49.5%;
+  font-size: 2em;
+  margin: 1% 0;
+  border: 0;
+  height: 3em;
+}
+.input3 {
+  width: 65%;
+  font-size: 2em;
+  margin: 1% 0;
+  border: 0;
+  height: 3em;
+}
+.input4 {
+  width: 34%;
+  font-size: 2em;
+  margin: 1% 0;
+  border: 0;
+  height: 3em;
+  background: rgb(68, 68, 248);
+}
+.floatleft {
+  float: left;
+}
+.floatright {
+  float: right;
+}
+ul > li {
+  list-style: none;
+  display: inline;
+  padding-left: 2%;
+  margin-left: 0%;
+}
+ul {
+  font-size: 2em;
+}
+li.borderBottom {
+  border-bottom: 2px blue solid;
+}
+h2.heading {
+  font-size: 2em;
+  margin-bottom: 2%;
+}
+h1.heading {
+  font-size: 3em;
+}
+.section2Img {
+  width: 100%;
+}

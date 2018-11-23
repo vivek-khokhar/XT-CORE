@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex Calculator</title>
+    <style>
+        html {
+                font-family: sans-serif;
+        }
+        body {
+            margin: 0 auto;
+            width: 600px;
+            border: 10px solid blue;
+        }
+        .parentDiv {
+            display: flex; 
+            flex-wrap: wrap;
+            /* align-items: center;
+            justify-content: space-around; */
+        }
+        .header {
+            flex: 90%;
+            padding: 5%;
+            border:  10px solid black;
+        }
+
+        .row1 {
+            flex: 33%;
+            line-height: 30px;
+            border: 2px solid grey;
+        }
+        .row2 {
+            flex: 20%;
+            line-height: 30px;
+            border: 2px solid grey;
+        }
+        h1 {
+            float: right;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class = "parentDiv">
+        <div class = "header">
+            <h1> 0</h1>
+        </div>
+        <div class="row1"><h2>M-</h2></div>
+        <div class="row1"><h2>M+</h2></div>
+        <div class="row1"><h2>MS</h2></div>
+        <div class="row2"><h2>%</h2></div>
+        <div class="row2"><h2>/-</h2></div>
+        <div class="row2"><h2>x^2</h2></div>
+        <div class="row2"><h2>1/x</h2></div>
+        <div class="row2"><h2>CE</h2></div>
+        <div class="row2"><h2>C</h2></div>
+        <div class="row2"><h2>=</h2></div>
+        <div class="row2"><h2>/</h2></div>
+        <div class="row2"><h2>7</h2></div>
+        <div class="row2"><h2>8</h2></div>
+        <div class="row2"><h2>9</h2></div>
+        <div class="row2"><h2>X</h2></div>
+        <div class="row2"><h2>4</h2></div>
+        <div class="row2"><h2>5</h2></div>
+        <div class="row2"><h2>6</h2></div>
+        <div class="row2"><h2>-</h2></div>
+        <div class="row2"><h2>1</h2></div>
+        <div class="row2"><h2>2</h2></div>
+        <div class="row2"><h2>3</h2></div>
+        <div class="row2"><h2>+</h2></div>
+        <div class="row2"><h2>+-</h2></div>
+        <div class="row2"><h2>0</h2></div>
+        <div class="row2"><h2>.</h2></div>
+
+    </div>
+</body>
+</html>
