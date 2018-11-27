@@ -1,88 +1,58 @@
-function myFunction () {
-    console.log('inside function my Function')
+'use strict'
+
+// Object Destructruting
+
+function getEmployee({id, name, salary}) {
+    //ES5 Pattern
+    // const id = employee.id;
+    // const name = employee.name;
+    // const salary = employee.salary;
+
+    // console.log(`ID ${id}`);
+    // console.log(`Name ${id}`);
+    // console.log(`Salary ${id}`);
+
+    //ES6 pattern
+
+    //const {id, name,salary} = employee;
+     console.log(`ID ${id}`);
+    console.log(`Name ${id}`);
+    console.log(`Salary ${id}`);
+
 }
 
-//////////////////////////////////////////////////////////////////
-// agruments is in function
-function add (a,b) {
-    const result = a+ b;
-    console.log(result);
+getEmployee({
+    id: 1,
+    name: 'test',
+    salary: 100
+});
+
+const getStocks = (id, value, symbol) => ({
+    id: id,
+    value: value,
+    symbol: symbol
+})
+
+// both key and value identifier is same , make it one
+const getStocks1 = (id =1, value=7.9, symbol="DTF") => ({
+    id: id,
+    value: value,
+    symbol: symbol
+})
+
+console.log(getStocks(3, 900, "DSF"));
+
+console.log(getStocks1(13,1900, "DSF"));
+
+const getCustomers = ({id, address: {city, NCT}}) => {
+   // console.log(id, address.city);
+    console.log(id, city, NCT);
 }
-//parameter are passed
-console.log('a : 10, b : 20');
-add(10,20);
-
-console.log('a : none, b : none');
-add();
-
-console.log('a : "none", b : 20');
-add("no", 10);
-
-console.log('a : "10", b : 20');
-add("10", 10);
-
-//return value
-
-function substract(a, b) {
-    return a-b;
-}
-
-const result1 = substract(10,1);
-console.log(result1);
-
-function isValid() {
-    return;
-}
-
-const status = isValid() ? 'Valid' : 'Invalid';
-
-console.log(status);
-
-function login(username, password) {
-    if(username === 'admin' && password ==='admin'){
-        return true;
+const customer = {
+    id:1,
+    address: {
+        city:"delhi",
+        NCT:"Capital"
     }
-    
 }
-
-const loinas = login('admin', 'admin');
-const testFun = login('admin1', 'admin1');
-
-console.log(loinas);
-console.log(testFun);
-
-function addwithDefaultES5(a,b) {
-    //debugger;
-    a = a || 0;
-    b = b || 0;
-    const result = parseInt(a) + parseFloat(b);
-    console.log( 'ES5 default values:- ' +result);
-}
-
-function addwithDefaultES6(a = 0,b = 0) {
-    const result = parseInt(a) + parseFloat(b);
-    console.log( 'ES6 default values:- ' +result);
-}
-
-addwithDefaultES5(0 , 'fr');
-addwithDefaultES6(undefined, undefined);
-
-function log() {
-    console.log(arguments);
-}
-log('hello');
-log('Hi', 'welcome', 'to', 'the', 'training 1');
-
-/// rest operator
-function logES6 (...args) {
-    console.log(args);
-}
-
-
-logES6('Hi', 'welcome', 'to', 'the', 'training 2');
-
-function doWeblog(page, ...args) {
-    console.log(page, args);
-}
-
-doWeblog('first param fixed','Hi', 'welcome', 'to', 'the', 'training 3');
+getCustomers(customer);
