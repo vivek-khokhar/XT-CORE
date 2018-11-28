@@ -1,58 +1,49 @@
-'use strict';
-
-
-
-const getUser = function (userCredentials) {
-    let mockUse = {
-        name:'admin'
-    }
-    const promise = new Promise(function( resolve, reject) {
-        if(mockUse){
-            resolve({
-            name: 'admin',
-            credentials: userCredentials
-        });
-    } else {
-            reject({
-                err: 'Something went wrong'
-            })
-        }
-    });
-    return promise;
-}
-
-const loginUser = function (data) {
-    return new Promise((resolve, reject) => {
-        if(data.name === data.credentials.name) {
-            resolve(data);
+'use strict'
+// es5
+function getX(param) {
+    var cache ;
+    return (param) => {
+        cache = cache || {};
+        if(cache[param]) {
+            return `${cache[param]} value already cached`;
         }else {
-            reject({
-                err: 'Something went wrong'
-            })
+            cache[param] = param;
+            return `${cache[param]} value  cached in memory`;
         }
-    }); 
+    }
+
+    //return chacheObject;
+
 }
 
-const dashBoard = function(user) {
-    const message = `Welcome to dashboard Message ${user.name}`;
-    return Promise.resolve(message);
+
+
+function getY(param) {
+    let cache = new Map();
+    return (param) => {
+        if(cache.get(param)) {
+            return `${cache.get(param)} value already cached`;
+        }else {
+            cache.set(param, param);
+            return `${cache.get(param)} value  cached in memory`;
+        }
+    }
 }
 
-    // getUser()    
-    // .then(response => {
-    //     loginUser(response, {name : 'test'}).then(
-    //         data => console.log(data.name))
-    //     })
-    // .catch(err => console.log(err));
+let test = getX();
+let test6 = getY();
 
-    getUser({name : 'admin'})    
-    .then(loginUser)
-    .then(dashBoard)
-    .then(data => console.log(data))
-    .catch(err => console.log(err.err));
+console.log(test('test'));
+//test value  cached in memory
 
-    getUser({name : 'test'})    
-    .then(loginUser)
-    .then(dashBoard)
-    .then(data => console.log(data))
-    .catch(err => console.log(err.err));
+console.log(test6('test'));
+
+//test value  cached in memory
+
+console.log(test('test'));
+// test value already cached
+
+console.log(test6('test'));
+// test value already cached
+
+

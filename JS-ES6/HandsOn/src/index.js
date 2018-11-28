@@ -1,58 +1,79 @@
-'use strict'
+const list = new Array(1,2,3,4,5);
+console.log(list);
 
-// Object Destructruting
+const names = ['doga', 'a', 'we', 'jack'];
+console.log(names);
 
-function getEmployee({id, name, salary}) {
-    //ES5 Pattern
-    // const id = employee.id;
-    // const name = employee.name;
-    // const salary = employee.salary;
-
-    // console.log(`ID ${id}`);
-    // console.log(`Name ${id}`);
-    // console.log(`Salary ${id}`);
-
-    //ES6 pattern
-
-    //const {id, name,salary} = employee;
-     console.log(`ID ${id}`);
-    console.log(`Name ${id}`);
-    console.log(`Salary ${id}`);
-
-}
-
-getEmployee({
-    id: 1,
-    name: 'test',
-    salary: 100
-});
-
-const getStocks = (id, value, symbol) => ({
-    id: id,
-    value: value,
-    symbol: symbol
+names.forEach(function (item, index) {
+    console.log(item, index);
 })
 
-// both key and value identifier is same , make it one
-const getStocks1 = (id =1, value=7.9, symbol="DTF") => ({
-    id: id,
-    value: value,
-    symbol: symbol
-})
+//quiz
 
-console.log(getStocks(3, 900, "DSF"));
-
-console.log(getStocks1(13,1900, "DSF"));
-
-const getCustomers = ({id, address: {city, NCT}}) => {
-   // console.log(id, address.city);
-    console.log(id, city, NCT);
-}
-const customer = {
-    id:1,
-    address: {
-        city:"delhi",
-        NCT:"Capital"
+const video = {
+    genere:"si fi",
+    list: ['a','b','c'],
+    findMovies() {
+        let genere = this.genere;
+        this.list.forEach(function(movie, index) {
+            console.log(genere);
+            console.log(movie);
+        })
     }
 }
-getCustomers(customer);
+video.findMovies();
+
+const video4 = {
+    genere:"si fi",
+    list: ['a','b','c'],
+    findMovies() {
+        console.log('call function');
+        this.list.forEach.call(this.list,function(movie, index) {
+            console.log(this.genere);
+            console.log(movie);
+            console.log('call function');
+        })
+    }
+}
+video4.findMovies();
+
+const video3 = {
+    genere:"si fi",
+    list: ['a','b','c'],
+    findMovies() {
+        console.log('bind function');
+        function named(movie, index) {
+            console.log(this.genere);
+            console.log(movie);
+            console.log('bind function');
+        }
+        this.list.forEach(named.bind(this));
+    }
+}
+video3.findMovies();
+
+const video1 = {
+    genere:"si fi",
+    list: ['a','b','c'],
+    findMovies() {
+        let genere = this.genere;
+        this.list.forEach(function(movie, index) {
+            console.log(genere);
+            console.log(movie);
+        })
+    }
+}
+video1.findMovies();
+
+const video2 = {
+    genere:"si fi",
+    list: ['a','b','c'],
+    findMovies() {
+        //let self = this;
+        this.list.forEach((movie, index) => {
+            console.log(this.genere);
+            console.log(movie);
+        })
+    }
+}
+video2.findMovies();
