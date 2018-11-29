@@ -1,49 +1,45 @@
-'use strict'
-// es5
-function getX(param) {
-    var cache ;
-    return (param) => {
-        cache = cache || {};
-        if(cache[param]) {
-            return `${cache[param]} value already cached`;
-        }else {
-            cache[param] = param;
-            return `${cache[param]} value  cached in memory`;
-        }
-    }
+const links = [
+  "https://api.github.com/users/rajeevjain1983",
 
-    //return chacheObject;
+  "https://api.github.com/users/akanksha-211",
 
+  "https://api.github.com/users/CodeWithAnkitSinghal",
+
+  "https://api.github.com/users/adishmodi",
+
+  "https://api.github.com/users/goldy28",
+
+  "https://api.github.com/users/vinamrasingh",
+
+  "https://api.github.com/users/rohit-khanna",
+
+  "https://api.github.com/users/sanjaybhatt0621",
+
+  "https://api.github.com/users/JugalJoshi8",
+
+  "https://api.github.com/users/rohngonnarock",
+
+  "https://api.github.com/users/vivek-khokhar",
+
+  "https://api.github.com/users/SidVedi",
+
+  "https://api.github.com/users/ajayp944",
+
+  "https://api.github.com/users/rao7"
+];
+
+function getUsersPromise() {
+  return links.map(url => {
+    return fetch(url).then(res => res.json());
+  });
 }
 
-
-
-function getY(param) {
-    let cache = new Map();
-    return (param) => {
-        if(cache.get(param)) {
-            return `${cache.get(param)} value already cached`;
-        }else {
-            cache.set(param, param);
-            return `${cache.get(param)} value  cached in memory`;
-        }
-    }
+function getUsers() {
+   Promise.all(getUsersPromise()).then(res => {
+    res.forEach(user => {
+       console.log(user.name || user.name);
+    });
+  });
 }
 
-let test = getX();
-let test6 = getY();
-
-console.log(test('test'));
-//test value  cached in memory
-
-console.log(test6('test'));
-
-//test value  cached in memory
-
-console.log(test('test'));
-// test value already cached
-
-console.log(test6('test'));
-// test value already cached
-
-
+getUsers();
