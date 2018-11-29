@@ -37,7 +37,7 @@ function getUsersPromise() {
 function getUsers() {
    Promise.all(getUsersPromise()).then(res => {
     res.forEach(user => {
-       console.log(user.name || user.name);
+       console.log(user.name || user.login);
     });
   });
 }
