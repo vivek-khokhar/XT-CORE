@@ -1,10 +1,16 @@
-
-function getUsers() {
-    const url = "https://jsonplaceholder.typicode.com/users";
-    return fetch(url);
+function component() {
+    console.log('component is called');
+    const node = document.querySelector("#myHeading");
+    console.dir(node);
+    console.dir(node.innerHTML);
+    createElement();
 }
 
-getUsers()
-    .then(respoense => respoense.json().then(res => console.log(res)))
-    .catch(err => console.log(err));
+function createElement() {
+    const newHeader = document.createElement('h2');
+    newHeader.innerHTML="Created Element";
+    console.dir(newHeader);
+    document.body.appendChild(newHeader);
+}
 
+window.onload = component;

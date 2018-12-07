@@ -1,0 +1,74 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$text-align:left;
+$width: 5em;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    text-align: $text-align;
+
+}
+
+p {
+    font: 10px/8px;
+    $width: 1000px;
+    width: $width/2;
+    width: round(1.5)/2;
+    height: (500px/2);
+    margin-left: 5px + 8px/2px;
+    font: (italic bold 10px/8px);
+}
+
+span {
+    content: 'hello' + 'welcome';
+}
+
+$age: 20;
+.bool {
+    @if ($age > 10 and $age < 25) {
+        color: green;
+    }
+}
+.boolFalse {
+    @if ($age > 20 and $age < 25) {
+        color: red;
+    }
+}
+
+$name: foo;
+$attr: border;
+p.#{$name} {
+    #{$attr}-color: blue;
+} 
+
+//default values
+
+$content: "First content";
+$content: "Second content" !default;
+
+$new_content: "First time reference" !default;
+$new_content: "Second time reference";
+
+#main {
+    content: $content;
+}
+#main2 {
+    content: $new_content;
+}
+
+#main{
+    width: $width;
+}
+
+#sidebar {
+    width: $width;
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        width: 2em* $i;
+    }
+}
+
+@import "./test.scss"; 

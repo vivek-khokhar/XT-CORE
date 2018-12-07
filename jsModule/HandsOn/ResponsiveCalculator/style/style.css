@@ -1,0 +1,58 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  width: 95%;
+  border: 10px solid blue;
+}
+
+.inputBox {
+  width: 100%;
+  font-size: 32px;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.borderNone {
+  border: none;
+}
+
+.parentDiv {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center;
+            justify-content: space-around; */
+}
+
+.header {
+  flex: 85%;
+  padding: 5%;
+  border: 10px solid black;
+}
+
+.row1 {
+  flex: 33%;
+  line-height: 30px;
+  border: 2px solid grey;
+}
+
+.row2 {
+  flex: 25%;
+  line-height: 30px;
+  border: 2px solid grey;
+}
+
+h1 {
+  float: right;
+}
+
+h2 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

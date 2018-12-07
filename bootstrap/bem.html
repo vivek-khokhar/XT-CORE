@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .btn {
+            text-decoration: none;
+            background-color: white;
+            color: #888;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 10px 5px;
+        }
+
+        .btn__text{
+            border-radius: 0 5px 5px 0;
+        }
+
+        .btn--big {
+            font-size: 28px;
+            padding: 10px;
+            font-weight: 400;
+        }
+
+        .btn--orange {
+            background-color: orange;
+        }
+
+        .btn--green {
+            background-color: green;
+        }
+    </style>
+    <title>BEM example</title>
+</head>
+<body>
+    <button class="btn"> Block Button</button>
+    <button class="btn btn__text">Element button</button>
+    <button class="btn btn__text btn--big">Behaviour Button Big</button>
+    <button class="btn btn__text btn--orange">Behaviour Button Orange</button>
+    <button class="btn btn__text btn--big btn--orange">Behaviour Button Big Orange</button>
+    <button class="btn btn__text btn--big btn--green">Behaviour Button Big Green</button>
+</body>
+</html>

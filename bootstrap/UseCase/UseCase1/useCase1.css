@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(lightblue, white);
+  }
+  a.navlink {
+    color: white;
+    height: 200%;
+  }
+  .articleImage {
+    max-width: 20%;
+    float: left;
+    margin: 10px;
+  }
+  .asideImage {
+    max-width: 46%;
+    float: left;
+    margin: 1%;
+  }
+  .asideshadow {
+    box-shadow: 5px 0 #000000;
+  }

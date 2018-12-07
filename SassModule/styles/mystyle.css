@@ -1,0 +1,83 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  text-align: left;
+}
+
+p {
+  font: 10px/8px;
+  width: 500px;
+  width: 1;
+  height: 250px;
+  margin-left: 9px;
+  font: italic bold 10px/8px;
+}
+
+span {
+  content: "hellowelcome";
+}
+
+.bool {
+  color: green;
+}
+
+p.foo {
+  border-color: blue;
+}
+
+#main {
+  content: "First content";
+}
+
+#main2 {
+  content: "Second time reference";
+}
+
+#main {
+  width: 5em;
+}
+
+#sidebar {
+  width: 5em;
+}
+
+.item-1 {
+  width: 2em;
+}
+
+.item-2 {
+  width: 4em;
+}
+
+.item-3 {
+  width: 6em;
+}
+
+#mainAgain {
+  width: 100px;
+}
+
+#mainAgain2 {
+  width: 100px;
+}
+
+.box {
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  color: green;
+  background-color: yellow;
+  border-color: orange;
+}
+
+.warning, .message {
+  margin: 10px;
+  padding: 10px;
+  background-color: #333;
+}
+
+.warning {
+  background-color: red;
+  font-size: 10px;
+}
+
+/*# sourceMappingURL=mystyle.css.map */

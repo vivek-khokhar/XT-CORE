@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+    </style>
+    <title>Dom manipulation from Javascript</title>
+    <script src="./src/index_form2.js"></script>
+  </head>
+  <body>
+    <div class = "container">
+        <h1>Super Hero details</h1>
+        <h2 id="myName"></h2>
+        <form>
+            <div class="form-group">
+                <label for="heroName">Hero Name</label>
+                <input type="text" class = "form-control"name="heroName" id="heroName">
+            </div>
+            <div class="form-group">
+                    <label for="aliasName">Alias Name</label>
+                    <input type="text" class = "form-control"name="aliasName" id="aliasName">
+            </div>
+            <hr>
+            <h2>Powers</h2>
+            <div class="checkbox">
+                    <label><input type="checkbox" name="powers" value="SuperStrength">SuperStrength</label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="powers" value="Flight">Flight</label>
+                  </div>
+                  <div class="checkbox ">
+                    <label><input type="checkbox" name="powers" value="Regeneration" >Regeneration</label>
+                  </div>
+            <hr>
+            <div class="form-group">
+                    <label for="backStory">Backstory:</label>
+                    <textarea class="form-control" rows="5" id="backStory"></textarea>
+            </div>
+            <hr>
+                    <h2>Comic Universe</h2>
+                    <div class="radio">
+                            <label><input type="radio" name="affiliation" checked value ="DC Universe">DC Universe</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="affiliation" value ="Marvel Universe">Marvel Universe</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="affiliation" value ="others">Others</label>
+                          </div>
+<hr>
+                          <h2>Hero Rating</h2>
+                          <div class="form-group">
+                                <label for="rating">Select Hero Rating:</label>
+                                <select id="rating" class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+            <div class="form-group">
+                <input type="button" value="Save Details" id="saveDetails">
+            </div>
+
+        </form>
+        <hr>
+        <hr>
+        <section id="summary">
+            
+        </section>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

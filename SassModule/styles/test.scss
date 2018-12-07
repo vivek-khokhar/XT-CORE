@@ -1,0 +1,36 @@
+$widthAgain: 100px;
+#mainAgain{
+    width: $widthAgain;
+}
+@import "./test2.scss";
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    transform: $property;
+}
+@mixin colors($text, $background, $border){
+    color: $text;
+    background-color: $background;
+    border-color: $border
+}
+
+.box {
+    @include transform(rotate(30deg));
+    @include colors(green, yellow, orange);
+}
+
+%message-shared {
+    margin:10px;
+    padding:10px;
+    background-color: #333;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+.warning {
+    @extend %message-shared;
+    background-color: red;
+    font-size: 10px;
+}
