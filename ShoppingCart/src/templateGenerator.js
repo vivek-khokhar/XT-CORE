@@ -1,4 +1,16 @@
- class TemplateGeneratorFactory {
+ export default class TemplateGeneratorFactory {
+    selectedColor(color) {
+        switch (color) {
+            case "green":
+                return "color__selected";
+            case "black":
+                return "color__selected";
+            case "pink":
+                return "color__selected";
+            case "blue":
+                return "color__selected";
+        }
+    }
   editModalGenerator(details) {
     return `<div class="modal"><div class="modal-content">
       <span id="close_button" class="modal-close">X</span>
@@ -6,25 +18,26 @@
           <div class="col-6 text-center">
               <ul>
                   <li id="modal__title">${details.title}</li>
-                  <li class="modal__price">$ ${details.price}</span></li>
+                  <li class="modal__price"><strong>$${parseFloat(details.price) * parseInt(details.qty)}</strong></span></li>
                   <li>
                       Color <br>
-                      <span class="square__black color_hover"></span>
-                      <span class="square__blue color_hover"></span>
-                      <span class="square__pink color_hover"></span>
+                      <span class="color__square square__black ${details.color === "black" ? "color__selected" : ""}"></span>
+                      <span class="color__square square__blue ${details.color === "blue" ? "color__selected" : ""}"></span>
+                      <span class="color__square square__pink ${details.color === "pink" ? "color__selected" : ""}"></span>
+                      <span class="color__square square__green ${details.color === "green" ? "color__selected" : ""}"></span>
                   </li>
                   <li>
                       <select>
                           <option value="" selected>Size</option>
-                          <option value="S">S</option>
-                          <option value="M">M</option>
-                          <option value="L">L</option>
+                          <option value="S" ${details.size === "S" ? "selected" : ""}>S</option>
+                          <option value="M" ${details.size === "M" ? "selected" : ""}>M</option>
+                          <option value="L" ${details.size === "L" ? "selected" : ""}>L</option>
                       </select>
                       <select>
-                          <option value="1" selected>QTY:1</option>
-                          <option value="2">QTY:2</option>
-                          <option value="3">QTY:3</option>
-                          <option value="4">QTY:4</option>
+                          <option value="1" ${+details.qty === 1 ? "selected" : ""}>QTY:1</option>
+                          <option value="2" ${+details.qty === 2 ? "selected" : ""}>QTY:2</option>
+                          <option value="3" ${+details.qty === 3 ? "selected" : ""}>QTY:3</option>
+                          <option value="4" ${+details.qty === 4 ? "selected" : ""}>QTY:4</option>
                       </select>
                   </li>
                   <li>
@@ -63,12 +76,12 @@
                               <p>${result.size}</p>
                           </div>
                           <div class="col-1">
-                              <input type="text" name="qty" value="${
+                              <input type="text" data-Id="${result.id}" name="qty" value="${
                                 result.qty
                               }">
                           </div>
                           <div class="col-1">
-                              <p>$${result.price}</p>
+                              <p id="price${result.id}" data-price="${result.price}"><strong>$${parseFloat(result.price) * parseFloat(result.qty)}</strong></p>
                           </div>
                       </div>
                       <div class="mobile-view">
@@ -76,12 +89,12 @@
                               <p>Size: ${result.size}</p>
                           </div>
                           <div class="col-sm-12">
-                              <p>QTY: <input type="text" name="qty" value="${
+                              <p>QTY: <input type="text"data-Id="${result.id}" name="qty"  value="${
                                 result.qty
                               }"></p>
                           </div>
                           <div class="col-sm-12">
-                              <p><strong>$${result.price}</strong></p>
+                              <p id="price${result.id}" data-price="${result.price}"><strong>$${parseFloat(result.price) * parseFloat(result.qty)}</strong></p>
                           </div>
                       </div>
                       <div class="col-6 col-sm-12 action-section">
@@ -97,5 +110,3 @@
                   </div>`;
   }
 }
-
-module.exports = TemplateGeneratorFactory;

@@ -1,55 +1,73 @@
-let template = require('./templateGenerator');
+// let template = ('./templateGenerator');
+// let dal = require('./data');
+
+import TemplateGeneratorFactory from "./templateGenerator";
+import DataAccessLayer from "./data";
 
 class ShoppingCart {
-    constructor (template) {
-        this.template = template;
-        fetch("./data.json")
-          .then(data => data.json())
-          .then(result => {
-            this.merchandise = result;
-            document.querySelector("#total_itms").innerHTML =
-            result.length + result.length > 1 ? " items" : " item";
-            let editIds = [];
-            let rowContents = "";
-            result.forEach(item => {
-              rowContents += this.template.merchandiseRowGenerator(item);
-              editIds.push("#editButton" + item.id);
-            });
-            document.querySelector("#merchandise-list").innerHTML = rowContents;
-            editIds.forEach(editId => {
-              document.querySelector(editId).onclick = event => {
-                this.openEditModal(event.target.attributes.value.nodeValue);
-              };
-            });
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }
-
-      openEditModal(id) {
-        var item = this.merchandise.find(item => item.id === +id);
-        var container = document.querySelector("#editModal");
-        container.innerHTML = this.template.editModalGenerator(item);
-      
-        container.querySelector("#close_button").addEventListener("click", event => {
-          container.innerHTML = "";
+  constructor(template, dal) {
+    this.template = template;
+    this.dal = dal;
+    this.dal
+      .getData()
+      // .then(data => data.json())
+      .then(result => {
+        this.merchandise = result;
+        document.querySelector("#total_itms").innerHTML =
+          result.length + result.length > 1 ? " items" : " item";
+        let editIds = [];
+        let rowContents = "";
+        result.forEach(item => {
+          rowContents += this.template.merchandiseRowGenerator(item);
+          editIds.push("#editButton" + item.id);
         });
-      
-        window.onclick = event => {
-          if (event.target == container.childNodes[0]) {
-            container.innerHTML = "";
-          }
-        };
-      }
+        document.querySelector("#merchandise-list").innerHTML = rowContents;
+        editIds.forEach(editId => {
+          document.querySelector(editId).onclick = event => {
+            this.openEditModal(event.target.attributes.value.nodeValue);
+          };
+        });
 
-    
-    
+        document.querySelectorAll('input[name="qty"]').forEach(item => {
+          item.addEventListener("focusout", event => {
+            let id = event.target.attributes["data-Id"].value;
+            let priceElm = document.querySelector(`#price${id}`);
+            this.dal.saveData(id, event.target.value)
+            .then( (item) => {
+              priceElm.innerHTML = `<strong>$${parseFloat(
+                item.price
+            ) * parseFloat(event.target.value)}</strong>`;
+            })
+          });
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  openEditModal(id) {
+    var item = this.merchandise.find(item => item.id === +id);
+    var container = document.querySelector("#editModal");
+    let clickHandler = event => {
+      if (event.target == container.childNodes[0]) {
+        container.innerHTML = "";
+      }
+    };
+    container.innerHTML = this.template.editModalGenerator(item);
+
+    container
+      .querySelector("#close_button")
+      .addEventListener("click", event => {
+        container.innerHTML = "";
+        window.removeEventListener("click", clickHandler);
+      });
+
+    window.addEventListener("click", clickHandler);
+  }
 }
 
-// var 
-
-
+// var
 
 // function editModalGenerator(details) {
 //   return `<div class="modal"><div class="modal-content">
@@ -97,8 +115,6 @@ class ShoppingCart {
 // </div>`;
 // }
 
-
-
 // function merchandiseRowGenerator(result) {
 //   return `
 //     <div class="box">
@@ -135,7 +151,7 @@ class ShoppingCart {
 //                     </div>
 //                 </div>
 //                 <div class="col-6 col-sm-12 action-section">
-//                     <div id="${"editButton" + result.id}" value=${result.id} 
+//                     <div id="${"editButton" + result.id}" value=${result.id}
 //                      tabindex="0" role="button" aria-pressed="false">Edit</div>
 //                     <div  tabindex="0" role="button" aria-pressed="false">
 //                         <span aria-hidden=true>x</span> Remove
@@ -162,5 +178,6 @@ class ShoppingCart {
 //     }
 //   };
 // }
- template = new template();
-new ShoppingCart(template);
+let template = new TemplateGeneratorFactory();
+let dal = new DataAccessLayer();
+new ShoppingCart(template, dal);
