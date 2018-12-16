@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header><h1>Your Shopping Bag</h1></header>
+      <section>
+        <div class="box title desktop-view">
+          <div class="col-9" id="total_itms" role="heading" aria-level="7">
+            &nbsp;
+          </div>
+          <div class="col-1" role="heading" aria-level="7"><p>Size</p></div>
+          <div class="col-1" role="heading" aria-level="7"><p>Qty</p></div>
+          <div class="col-1" role="heading" aria-level="7"><p>Price</p></div>
+        </div>
+        <div
+          class="mobile-view item-count total_itms"
+          role="heading"
+          aria-level="7"
+        >
+          <p>3 Items</p>
+        </div>
+        <div id="merchandise-list"></div>
+      </section>
+    </div>
+    <div id="editModal"></div>
+    <script src="./dist/main.js"></script>
+  </body>
+</html>
