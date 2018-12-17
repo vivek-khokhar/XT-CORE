@@ -21,10 +21,10 @@
                   <li class="modal__price"><strong>$${parseFloat(details.price) * parseInt(details.qty)}</strong></span></li>
                   <li>
                       Color <br>
-                      <span class="color__square square__black ${details.color === "black" ? "color__selected" : ""}"></span>
-                      <span class="color__square square__blue ${details.color === "blue" ? "color__selected" : ""}"></span>
-                      <span class="color__square square__pink ${details.color === "pink" ? "color__selected" : ""}"></span>
-                      <span class="color__square square__green ${details.color === "green" ? "color__selected" : ""}"></span>
+                      <span name="color-swatch" data-color-value="black" class="color__square square__black ${details.color === "black" ? "color__selected" : ""}"></span>
+                      <span name="color-swatch" data-color-value="blue" class="color__square square__blue ${details.color === "blue" ? "color__selected" : ""}"></span>
+                      <span name="color-swatch" data-color-value="pink" class="color__square square__pink ${details.color === "pink" ? "color__selected" : ""}"></span>
+                      <span name="color-swatch" data-color-value="green" class="color__square square__green ${details.color === "green" ? "color__selected" : ""}"></span>
                   </li>
                   <li>
                       <select>

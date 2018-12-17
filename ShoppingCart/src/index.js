@@ -32,7 +32,7 @@ class ShoppingCart {
           item.addEventListener("focusout", event => {
             let id = event.target.attributes["data-Id"].value;
             let priceElm = document.querySelector(`#price${id}`);
-            this.dal.saveData(id, event.target.value)
+            this.dal.saveData(id, {"qty": event.target.value})
             .then( (item) => {
               priceElm.innerHTML = `<strong>$${parseFloat(
                 item.price
@@ -62,6 +62,18 @@ class ShoppingCart {
         container.innerHTML = "";
         window.removeEventListener("click", clickHandler);
       });
+      
+      container.querySelectorAll('span[name="color-swatch"]').forEach(item => {
+        item.addEventListener('click', (event) => {
+          container.querySelectorAll('span[name="color-swatch"]').forEach(swatches => {
+            swatches.classList.remove("color__selected");
+          });
+          this.dal.saveData(id, {"color": event.target.attributes['data-color-value'].value})
+            .then( (item) => { 
+              event.target.classList.add("color__selected");
+            })
+        })
+      })
 
     window.addEventListener("click", clickHandler);
   }

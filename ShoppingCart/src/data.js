@@ -47,10 +47,11 @@ export default class DataAccessLayer {
     return Promise.resolve(this.dataList);
   }
 
-  saveData(id, qty) {
+  saveData(id, value) {
     this.dataList.forEach(element => {
       if(parseInt(element.id) === parseInt(id)) {
-        element.qty = qty;
+
+        element = Object.assign(element, value);
       }
     });
     return Promise.resolve(this.dataList.find(item => item.id === +id));
