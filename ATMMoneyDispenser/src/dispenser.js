@@ -35,7 +35,7 @@ window.onload = function() {
     result["total"] = result["total"]
       ? result["total"] + count
       : Math.floor(amount / value);
-    if (parseInt(value) === 1) {
+    if (parseInt(value) === 1 || currencyKey.length === index ) {
       return result;
     }
     if (parseInt(amount) >= parseInt(value)) {
@@ -46,7 +46,7 @@ window.onload = function() {
   }
   function submitHandler() {
     currencyValue = Object.assign({}, currencyValueRef);
-    let keys = Object.keys(currencyValue).reverse();
+    let keys = Object.keys(currencyValue).sort((a,b) => b-a);
     currencyValue = atm_dispenser(amount.value, keys);
     value1.innerHTML = currencyValue["1"];
     value2.innerHTML = currencyValue["2"];

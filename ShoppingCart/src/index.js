@@ -32,12 +32,10 @@ class ShoppingCart {
           item.addEventListener("focusout", event => {
             let id = event.target.attributes["data-Id"].value;
             let priceElm = document.querySelector(`#price${id}`);
-            this.dal.saveData(id, {"qty": event.target.value})
-            .then( (item) => {
-              priceElm.innerHTML = `<strong>$${parseFloat(
-                item.price
-            ) * parseFloat(event.target.value)}</strong>`;
-            })
+            this.dal.saveData(id, { qty: event.target.value }).then(item => {
+              priceElm.innerHTML = `<strong>$${parseFloat(item.price) *
+                parseFloat(event.target.value)}</strong>`;
+            });
           });
         });
       })
@@ -49,31 +47,52 @@ class ShoppingCart {
   openEditModal(id) {
     var item = this.merchandise.find(item => item.id === +id);
     var container = document.querySelector("#editModal");
+    let updatedValues = {};
     let clickHandler = event => {
       if (event.target == container.childNodes[0]) {
         container.innerHTML = "";
       }
     };
+    let closeHandler = () => {
+      container.innerHTML = "";
+      window.removeEventListener("click", clickHandler);
+    }
     container.innerHTML = this.template.editModalGenerator(item);
+    let qtySelect = container.querySelector("#qtySelect");
+    let sizeSelect = container.querySelector("#sizeSelect");
+    qtySelect.addEventListener('change', (event)=> {
+      container.querySelector(`#modelqty${item.id}`).innerHTML = `<strong>$${parseFloat(item.price) * parseInt(qtySelect.value)}</strong>`;
+    })
 
     container
       .querySelector("#close_button")
-      .addEventListener("click", event => {
-        container.innerHTML = "";
-        window.removeEventListener("click", clickHandler);
-      });
-      
-      container.querySelectorAll('span[name="color-swatch"]').forEach(item => {
-        item.addEventListener('click', (event) => {
-          container.querySelectorAll('span[name="color-swatch"]').forEach(swatches => {
+      .addEventListener("click", closeHandler);
+
+    container.querySelectorAll('span[name="color-swatch"]').forEach(item => {
+      item.addEventListener("click", event => {
+        container
+          .querySelectorAll('span[name="color-swatch"]')
+          .forEach(swatches => {
             swatches.classList.remove("color__selected");
           });
-          this.dal.saveData(id, {"color": event.target.attributes['data-color-value'].value})
-            .then( (item) => { 
-              event.target.classList.add("color__selected");
-            })
-        })
-      })
+        updatedValues["color"] =
+          event.target.attributes["data-color-value"].value;
+        event.target.classList.add("color__selected");
+        
+      });
+    });
+    container.querySelector("#modalEdit").addEventListener('click', (event)=> {
+      updatedValues.size = container.querySelector("#sizeSelect").value;
+      updatedValues.qty = container.querySelector("#qtySelect").value
+      this.dal.saveData(id, updatedValues).then(item => {
+        let rowContent = document.querySelector(`#itemrow${item.id}`);
+        rowContent.innerHTML = this.template.merchandiseRowGenerator(item,true);
+        rowContent.querySelector("#editButton" + item.id).onclick = event => {
+          this.openEditModal(event.target.attributes.value.nodeValue);
+        };
+        closeHandler();
+      });
+    })
 
     window.addEventListener("click", clickHandler);
   }
